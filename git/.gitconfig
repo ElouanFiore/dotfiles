@@ -1,0 +1,9 @@
+[user]
+	email = 96867225+ElouanFiore@users.noreply.github.com
+	name = ElouanFiore
+[init]
+	defaultBranch = main
+[alias]
+	look = log --graph --decorate=full
+[core]
+	sshCommand = ssh -i ~/.ssh/github_key

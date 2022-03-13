@@ -1,0 +1,5 @@
+~/.bashrc;bash/.bashrc
+~/.bash_logout;bash/.bash_logout
+~/.bash_aliases;bash/.bash_aliases
+~/.vimrc;vim/.vimrc
+~/.gitconfig;git/.gitconfig
