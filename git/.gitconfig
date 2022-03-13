@@ -4,6 +4,6 @@
 [init]
 	defaultBranch = main
 [alias]
-	look = log --graph --decorate=full
+	look = log --graph
 [core]
 	sshCommand = ssh -i ~/.ssh/github_key

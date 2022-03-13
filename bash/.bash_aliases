@@ -11,7 +11,7 @@ alias airpods="bluetoothctl power on && bluetoothctl connect D4:68:AA:80:CA:1"
 alias blueoff="bluetoothctl power off"
 
 # Other aliases
-alias ssh-git="ssh-add ~/.ssh/Github_key"
 alias hst="history -w /dev/stdout | tac | fzf --border=sharp --height=20 | tr -d '\\n' | xclip -sel c"
 alias ll="ls -lahF"
 alias vi="vim"
+alias dotfiles="git -C ~/.dotfiles"
