@@ -27,10 +27,13 @@ pth="\[\e[38;5;127m\]"
 cursor="\[\e[38;5;93m\]"
 
 # The prompt
-PS1="[$usr\u$reset@$hst\h$reset] $pth\w\n$cursor\$$reset "
+PS1="[$usr\u$reset@$hst\h$reset] $pth\w\n$cursor\$ $reset"
 PS2="$cursor+$reset "
 
 unset reset, usr, hst, pth, cursor
+
+# Add regular cd PATH
+export CDPATH="/home/elouan/.paths"
 
 # Enable programmable completion features
 if ! shopt -oq posix; then

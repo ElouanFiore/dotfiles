@@ -1,22 +1,23 @@
 #!/bin/bash
 
 mkinstall() {
-	#eval "dd if=$3 of=$1 bs=4k" 
+	# Writing ISO $3 in device $1
+	eval "dd if=$3 of=$1 bs=4k" 
 	
-	declare -i i=1
-	file=()
-	echo "Select device:\n"
-	for $f in $1*; do
-		echo "$i) $f"
-		i=$i+1
-		file+=$f
+	# Print device's partitions 
+	for p in /dev/sda?; do 
+			((c+=1))
+			parts+=($p)
+			echo "$c) $p"
 	done
-	echo "\n"
-	read 
+	read -p "Select partition : "
+	((c=$REPLY-1)); part=${parts[$c]}
 	
-	dev=$(eval "ls $1*" | fzf)
-	eval "cp -v ~/.dotfiles/install.sh $dev"
-	eval "cp -v ~/.ssh/github_key $dev"
+	#Copy key and install script for second part
+	eval "cp -v ~/.dotfiles/install.sh $part"
+	eval "cp -v ~/.ssh/git_key $part"
+	
+	unset c p part parts
 }
 
 if [ $# -eq 3 ]; then
@@ -24,7 +25,7 @@ if [ $# -eq 3 ]; then
 		mkinstall
 	fi
 elif [ $# -eq 1 ]; then
-	#install()
+	#install
 else
 	echo "Bad usage"	
 fi
