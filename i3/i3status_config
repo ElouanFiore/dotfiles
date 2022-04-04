@@ -1,0 +1,47 @@
+general {
+	colors = true
+	interval = 5
+}
+
+order += "wireless wlo1"
+order += "memory"
+order += "cpu_usage"
+order += "battery all"
+order += "volume master"
+order += "tztime local"
+
+wireless wlo1 {
+	format_up = "%essid :%quality"
+	format_down = "W"
+}
+
+battery all {
+	format = "%status %percentage %remaining"
+	low_threshold = 15
+	threshold_type = percentage
+	
+}
+
+cpu_temperature 0 {
+	format = "%degrees °C"
+	path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+cpu_usage {
+	format = "%usage CPU"
+	max_threshold = 70
+}
+
+memory {
+	format = "%used MEM"
+	threshold_critical = 4G
+}
+
+tztime local {
+	format = "%H:%M:%S %d-%m-%Y"
+}
+
+volume master {
+	format = "%devicename %volume"
+	format_muted = "%devicename X"
+}

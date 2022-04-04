@@ -1,5 +1,10 @@
 ~/.bashrc;bash/.bashrc
 ~/.bash_logout;bash/.bash_logout
 ~/.bash_aliases;bash/.bash_aliases
+~/.bash_profile;bash/.bash_profile
+~/.xinitrc;X11/.xinitrc
+~/.xserverrc;X11/.xserverrc
 ~/.vimrc;vim/.vimrc
 ~/.gitconfig;git/.gitconfig
+~/.config/i3/config;i3/config
+~/.config/i3status/config;i3/i3status_config
