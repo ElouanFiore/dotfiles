@@ -1,6 +1,6 @@
 set $mod Mod4
 default_border pixel 2
-gaps inner 20
+#gaps inner 20
 
 font pango:Mono 12
 
@@ -148,6 +148,6 @@ bindsym $mod+r mode "resize"
 bar {
 	separator_symbol " | "
 	position top
-	height 25
+	#zheight 25
 	status_command i3status
 }
