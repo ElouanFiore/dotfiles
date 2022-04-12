@@ -8,7 +8,7 @@ alias egrep='egrep --color=auto'
 alias ip="ip -c"
 
 # Bluetooth aliases
-alias airpods="bluetoothctl power on && bluetoothctl connect D4:68:AA:80:CA:1"
+alias airpods="bluetoothctl power on && bluetoothctl connect D4:68:AA:80:CA:18"
 alias blueoff="bluetoothctl power off"
 
 # Wifi aliases

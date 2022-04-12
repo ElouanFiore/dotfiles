@@ -3,11 +3,10 @@ general {
 	interval = 5
 }
 
-order += "wireless wlp2s0"
 order += "memory"
 order += "cpu_usage"
+order += "wireless wlp2s0"
 order += "battery all"
-order += "volume master"
 order += "tztime local"
 
 wireless wlp2s0 {
@@ -37,11 +36,11 @@ memory {
 	threshold_critical = 1G
 }
 
-tztime local {
-	format = "%H:%M:%S %d-%m-%Y"
-}
-
 volume master {
 	format = "%devicename %volume"
 	format_muted = "%devicename X"
+}
+
+tztime local {
+	format = "%H:%M:%S %d-%m-%Y "
 }
