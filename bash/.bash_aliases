@@ -22,5 +22,6 @@ process() { eval "ps aux | grep -E 'USER|$1'"  | tac | fzf --height=7 --border=s
 # Other aliases
 alias upgrade="sudo apt update && sudo apt upgrade"
 alias hst="history -w /dev/stdout | sort | uniq | fzf --border=sharp --height=20 | tr -d '\n' | xclip -sel c"
-alias ll="ls -lahF"
+alias ll="ls -lhF"
+alias lla="ls -lahF"
 alias dotfiles="git -C ~/.dotfiles"
