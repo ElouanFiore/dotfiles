@@ -8,3 +8,6 @@
 	st = status
 [core]
 	sshCommand = ssh -i ~/.ssh/git_key
+	editor = vim
+[merge]
+	tool = vimdiff

@@ -7,4 +7,9 @@
 ~/.vimrc;vim/.vimrc
 ~/.gitconfig;git/.gitconfig
 ~/.config/i3/config;i3/config
-~/.config/i3status/config;i3/i3status_config
+~/.config/polybar/perfbar.ini;polybar/perfbar.ini
+~/.config/polybar/base.ini;polybar/base.ini
+~/.config/polybar/multbar.ini;polybar/multbar.ini
+~/.config/polybar/launchbar.sh;polybar/launchbar.sh
+~/.local/bin;bin/*
+~/.config/kitty/kitty.conf;kitty/kitty.conf

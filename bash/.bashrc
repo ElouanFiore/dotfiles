@@ -32,6 +32,8 @@ PS2="$cursor+$reset "
 
 unset reset, usr, hst, pth, cursor
 
+PATH=~/.local/bin:$PATH
+
 # Add regular cd PATH
 export CDPATH="/home/elouan/.paths"
 
