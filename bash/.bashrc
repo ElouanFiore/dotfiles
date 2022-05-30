@@ -21,16 +21,15 @@ fi
 
 # Color codes
 reset="\[\e[0m\]"
-usr="\[\e[38;5;213m\]"
+usr="\[\e[38;5;127m\]"
 hst="\[\e[38;5;200m\]"
-pth="\[\e[38;5;127m\]"
-cursor="\[\e[38;5;93m\]"
+pth="\[\e[38;5;213m\]"
 
 # The prompt
-PS1="[$usr\u$reset@$hst\h$reset] $pth\w\n$cursor\$ $reset"
-PS2="$cursor+$reset "
+PS1="[$usr\u$reset@$hst\h$reset] $pth\w$reset\n\$ "
+PS2="> "
 
-unset reset, usr, hst, pth, cursor
+unset reset, usr, hst, pth
 
 PATH=~/.local/bin:$PATH
 
