@@ -1,1 +1,0 @@
-/home/elou/.dotfiles/X11/.xserverrc/.bash_profile
