@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]; then
+	echo "X"
+elif [ $(echo info | bluetoothctl | grep 'Device' | wc -c) -eq 0 ]; then 
+	echo "On"
+else
+	echo "Up"
+fi

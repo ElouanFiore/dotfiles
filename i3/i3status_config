@@ -3,14 +3,13 @@ general {
 	interval = 5
 }
 
-order += "wireless wlo1"
 order += "memory"
 order += "cpu_usage"
+order += "wireless wlp2s0"
 order += "battery all"
-order += "volume master"
 order += "tztime local"
 
-wireless wlo1 {
+wireless wlp2s0 {
 	format_up = "%essid :%quality"
 	format_down = "W"
 }
@@ -34,14 +33,14 @@ cpu_usage {
 
 memory {
 	format = "%used MEM"
-	threshold_critical = 4G
-}
-
-tztime local {
-	format = "%H:%M:%S %d-%m-%Y"
+	threshold_critical = 1G
 }
 
 volume master {
 	format = "%devicename %volume"
 	format_muted = "%devicename X"
+}
+
+tztime local {
+	format = "%H:%M:%S %d-%m-%Y "
 }

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+vol=$(pactl get-sink-volume @DEFAULT_SINK@ | head -1 | cut -d"/" -f2 | tr -d " %")
+mute=$(pactl get-sink-mute @DEFAULT_SINK@ | cut -d" " -f2)
+
+case $1 in
+"+")
+	if [ $vol -lt 100 ]; then
+		pactl set-sink-volume @DEFAULT_SINK@ +5%
+	fi
+	;;
+"-")
+	if [ $vol -gt 0 ]; then
+		pactl set-sink-volume @DEFAULT_SINK@ -5%
+	fi
+	;;
+"m")
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	;;
+"g")
+	sink=$(pactl get-default-sink)
+	if [ $mute == "oui" ]; then
+		echo "X"
+	else
+		case $sink in
+			"bluez_sink.D4_68_AA_80_CA_18.a2dp_sink")
+				echo "$vol% Airpods" 
+				;;
+			*)
+				echo "$vol%" 
+				;;
+		esac
+	fi
+	;;
+esac	

@@ -1,38 +1,40 @@
 set $mod Mod4
 default_border pixel 2
-gaps inner 20
+gaps inner 10
+hide_edge_borders smart
+smart_gaps on
+client.focused	#f0c674 #285577 #ffffff #2e9ef4	#f0c674
+
 
 font pango:Mono 12
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# Polybar 
+set $Bar ~/.dotfiles/polybar/launchbar.sh
+exec --no-startup-id $Bar
+bindsym $mod+b exec --no-startup-id $Bar --change
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/sound + && $Bar -r
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/sound - && $Bar -r
+bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/sound m && $Bar -r
+bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mic m && $Bar -r
+
+# Backlight control
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 && $Bar --lum
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && $Bar --lum
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id terminator
+bindsym $mod+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show
 
 # change focus
 bindsym $mod+h focus left
@@ -101,8 +103,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 
 # debug mode
 mode "debug" {
-	bindsym c reload
-	bindsym r restart
+	bindsym c exec --no-startup-id i3-msg reload && $Bar --refresh
+	bindsym r exec --no-startup-id i3-msg restart && $Bar --refresh
 	
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -113,9 +115,11 @@ bindsym $mod+Shift+d mode "debug"
 
 # mode for logout/locking/sleeping/shutdown/restart
 mode "power" {
-	bindsym l exec i3-msg exit &
-	bindsym s exec poweroff &
-	bindsym r exec reboot &
+	bindsym l exec --no-startup-id /bin/i3lock -c 000000 -i Images/lock/nobitches.png; mode "default"
+	bindsym e exec --no-startup-id i3-msg exit
+	bindsym s exec --no-startup-id "/bin/i3lock -c 000000 -i Images/lock/nobitches.png; /bin/systemctl suspend"; mode "default"
+	bindsym p exec --no-startup-id /bin/systemctl poweroff
+	bindsym r exec --no-startup-id /bin/systemctl reboot
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -142,12 +146,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-	separator_symbol " | "
-	position top
-	height 25
-	status_command i3status
-}
