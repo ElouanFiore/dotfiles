@@ -20,6 +20,8 @@
 .config/polybar/launchbar.sh	polybar/launchbar.sh
 # Kitty
 .config/kitty/kitty.conf		kitty/kitty.conf
+# XDG
+.config/user-dirs.dirs			xdg/user-dirs.dirs
 # CustomBin
 .local/bin/airpods				bin/airpods
 .local/bin/blueoff				bin/blueoff

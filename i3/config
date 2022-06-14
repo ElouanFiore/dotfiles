@@ -20,8 +20,8 @@ bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/sound m && $Bar -r
 bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mic m && $Bar -r
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 && $Bar --lum
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 && $Bar --lum
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 6 && $Bar --lum
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 6 && $Bar --lum
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -34,7 +34,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+h focus left

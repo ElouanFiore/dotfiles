@@ -21,9 +21,9 @@ fi
 
 # Color codes
 reset="\[\e[0m\]"
-usr="\[\e[38;5;127m\]"
-hst="\[\e[38;5;200m\]"
-pth="\[\e[38;5;213m\]"
+usr="\[\e[38;5;202m\]"
+hst="\[\e[38;5;208m\]"
+pth="\[\e[38;5;220m\]"
 
 # The prompt
 PS1="[$usr\u$reset@$hst\h$reset] $pth\w$reset\n\$ "
