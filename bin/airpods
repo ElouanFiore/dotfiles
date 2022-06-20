@@ -1,2 +1,4 @@
 #!/bin/sh
-bluetoothctl power on && bluetoothctl connect D4:68:AA:80:CA:18 && pactl set-default-sink bluez_sink.D4_68_AA_80_CA_18.a2dp_sink
+rfkill unblock bluetooth
+bluetoothctl connect D4:68:AA:80:CA:18
+pactl set-default-sink bluez_sink.D4_68_AA_80_CA_18.a2dp_sink

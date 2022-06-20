@@ -8,10 +8,10 @@ case $1 in
 		stat=$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -d" " -f2)
 		case $stat in
 			"oui")
-				echo Up
+				echo X
 				;;
 			*)
-				echo X
+				echo Up
 				;;
 		esac
 		;;

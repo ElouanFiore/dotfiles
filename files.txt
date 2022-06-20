@@ -23,8 +23,6 @@
 # XDG
 .config/user-dirs.dirs			xdg/user-dirs.dirs
 # CustomBin
-.local/bin/airpods				bin/airpods
-.local/bin/blueoff				bin/blueoff
 .local/bin/bluetoothstat		bin/bluetoothstat
 .local/bin/mic					bin/mic
 .local/bin/sound				bin/sound
