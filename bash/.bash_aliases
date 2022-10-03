@@ -15,7 +15,8 @@ alias wifi-hs="wifi-on && wpa_cli select_network 1"
 # Bluetooth aliases
 alias ble-on="rfkill unblock bluetooth"
 alias ble-down="rfkill block bluetooth"
-alias airpods="ble-on && sleep 1 && bluetoothctl connect D4:68:AA:80:CA:18 && pactl set-default-sink bluez_sink.D4_68_AA_80_CA_18.a2dp_sink"
+alias airpods="ble-on && sleep 1 && bluetoothctl power on && bluetoothctl connect D4:68:AA:80:CA:18 && pactl set-default-sink bluez_sink.D4_68_AA_80_CA_18.a2dp_sink"
+alias boom2="ble-on && sleep 1 && bluetoothctl power on && bluetoothctl connect C0:28:8D:85:76:36 && pactl set-default-sink bluez_sink.C0_28_8D_85_76_36.a2dp_sink"
 
 # Process aliases
 # ps aux | grep "bash" | tr -s ' ' | cut -d" " -f2 | kill -s 9
@@ -34,3 +35,5 @@ alias lla="ls -lahF"
 alias dotfiles="git -C ~/.dotfiles"
 alias cpwd="pwd | tr -d '\n' | xclip -sel c"
 alias reconf="~/.dotfiles/config.sh"
+alias ssh="kitty +kitten ssh"
+alias public-ip="curl ifconfig.me; echo"

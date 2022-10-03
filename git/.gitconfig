@@ -9,6 +9,5 @@
 [core]
 	sshCommand = ssh -i ~/.ssh/git_key
 	editor = vim
-	autocrlf = input
 [merge]
 	tool = vimdiff
