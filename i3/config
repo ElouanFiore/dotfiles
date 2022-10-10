@@ -5,6 +5,8 @@ hide_edge_borders smart
 smart_gaps on
 client.focused	#f0c674 #285577 #ffffff #2e9ef4	#f0c674
 
+assign [class="KeePassXC"] 9
+exec /usr/bin/keepassxc
 
 font pango:Mono 12
 
