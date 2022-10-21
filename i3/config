@@ -121,9 +121,9 @@ bindsym $mod+Shift+d mode "debug"
 
 # mode for logout/locking/sleeping/shutdown/restart
 mode "power" {
-	bindsym l exec --no-startup-id /bin/i3lock -i ~/Imgs/Wallpapers/altered-carbon.png; mode "default"
+	bindsym l exec --no-startup-id /bin/i3lock -i ~/pics/Wallpapers/altered-carbon.png; mode "default"
 	bindsym e exec --no-startup-id i3-msg exit
-	bindsym s exec --no-startup-id "/bin/i3lock -i ~/Imgs/Wallpapers/altered-carbon.png; /bin/systemctl suspend"; mode "default"
+	bindsym s exec --no-startup-id "/bin/i3lock -i ~/pics/Wallpapers/altered-carbon.png; /bin/systemctl suspend"; mode "default"
 	bindsym p exec --no-startup-id /bin/systemctl poweroff
 	bindsym r exec --no-startup-id /bin/systemctl reboot
 
