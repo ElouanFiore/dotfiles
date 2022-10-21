@@ -1,14 +1,18 @@
 set $mod Mod4
-default_border pixel 2
-gaps inner 10
-hide_edge_borders smart
-smart_gaps on
+
 client.focused	#f0c674 #285577 #ffffff #2e9ef4	#f0c674
 
+# Borders & Gaps conf
+hide_edge_borders smart
+smart_gaps on
+gaps inner 10
+default_border pixel 2
+
+# Start keepass and assign to 9
 assign [class="KeePassXC"] 9
 exec /usr/bin/keepassxc
 
-font pango:Mono 12
+font pango:FiraCode Nerd Font 12
 
 # Polybar 
 set $Bar ~/.dotfiles/polybar/launchbar.sh
@@ -117,9 +121,9 @@ bindsym $mod+Shift+d mode "debug"
 
 # mode for logout/locking/sleeping/shutdown/restart
 mode "power" {
-	bindsym l exec --no-startup-id /bin/i3lock -c 000000 -i Images/lock/nobitches.png; mode "default"
+	bindsym l exec --no-startup-id /bin/i3lock -i ~/Imgs/Wallpapers/altered-carbon.png; mode "default"
 	bindsym e exec --no-startup-id i3-msg exit
-	bindsym s exec --no-startup-id "/bin/i3lock -c 000000 -i Images/lock/nobitches.png; /bin/systemctl suspend"; mode "default"
+	bindsym s exec --no-startup-id "/bin/i3lock -i ~/Imgs/Wallpapers/altered-carbon.png; /bin/systemctl suspend"; mode "default"
 	bindsym p exec --no-startup-id /bin/systemctl poweroff
 	bindsym r exec --no-startup-id /bin/systemctl reboot
 
