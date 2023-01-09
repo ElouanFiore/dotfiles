@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+command=`dmenu_path | dmenu -l 10 -b -fn "FiraCode Nerd Font" -nb "#282A2E" -sf "#F0C674" -sb "#373B41"`
+
+if [[ -n $command ]]; then
+	echo $command >> ~/.dotfiles/progs.txt
+	exec $command
+fi

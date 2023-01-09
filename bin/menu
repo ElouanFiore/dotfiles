@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+command=`cat ~/.dotfiles/progs.txt | sort | /usr/bin/dmenu -l 10 -b -fn "FiraCode Nerd Font" -nb "#282A2E" -sf "#F0C674" -sb "#373B41"`
+
+exec $command

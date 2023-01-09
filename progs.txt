@@ -1,0 +1,10 @@
+virtualbox
+kali-linux
+firefox
+bitwarden-desktop
+keepassxc
+libreoffice
+yubikey-personalization-gui
+thunar
+discord
+minecraft-launcher
