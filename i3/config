@@ -9,8 +9,8 @@ gaps inner 10
 default_border pixel 2
 
 # Start keepass and assign to 9
-assign [class="KeePassXC"] 9
-exec /usr/bin/keepassxc
+assign [class="Bitwarden"] 9
+exec /usr/bin/bitwarden-desktop
 
 font pango:FiraCode Nerd Font 12
 
@@ -44,6 +44,8 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id ~/.dotfiles/bin/menu
 # start dmenu and add to custom dmenu
 bindsym $mod+Shift+d exec --no-startup-id ~/.dotfiles/bin/addMenu
+bindsym $mod+n exec --no-startup-id networkmanager_dmenu
+bindsym $mod+c exec --no-startup-id flameshot gui
 
 # change focus
 bindsym $mod+h focus left

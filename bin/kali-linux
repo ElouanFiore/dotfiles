@@ -1,0 +1,3 @@
+#!/bin/env bash
+
+/usr/bin/virtualboxvm --startvm kali-linux

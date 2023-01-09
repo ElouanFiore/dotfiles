@@ -1,0 +1,7 @@
+kitty (change kitty ?)
+bashrc
+i3
+polybar
+dmenu
+networmanager_dmenu
+nvim

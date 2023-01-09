@@ -11,6 +11,8 @@ shopt -s histappend
 # update the values of LINES and COLUMNS
 shopt -s checkwinsize
 
+set -o vi
+
 # Alias definitions
 . ~/.bash_aliases
 
