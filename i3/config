@@ -15,19 +15,20 @@ exec /usr/bin/keepassxc
 font pango:FiraCode Nerd Font 12
 
 # Polybar 
-set $Bar ~/.dotfiles/polybar/launchbar.sh
-exec --no-startup-id $Bar
-bindsym $mod+b exec --no-startup-id $Bar --change
+set $Bar ~/.dotfiles/polybar/bar.sh
+exec --no-startup-id $Bar --start
+bindsym $mod+b exec --no-startup-id $Bar --switch
+bindsym $mod+Shift+b exec --no-startup-id $Bar
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/sound + && $Bar -r
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/sound - && $Bar -r
-bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/sound m && $Bar -r
-bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mic m && $Bar -r
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/sound +
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/sound -
+bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/sound m
+bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mic m
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 6 && $Bar --lum
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 6 && $Bar --lum
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.dotfiles/bin/lum --inc
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/bin/lum --dec
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position

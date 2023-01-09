@@ -1,18 +1,28 @@
 #!/bin/sh
 
+mute=$(/usr/bin/pactl get-source-mute @DEFAULT_SOURCE@ | cut -d" " -f2)
+
 case $1 in
 	"m")
-		pactl set-source-mute @DEFAULT_SOURCE@ toggle
-		;;
+	/usr/bin/pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+	if [[ $mute == "oui" ]]; then
+		/usr/bin/notify-send -u low -h string:x-dunst-stack-tag:mic "Microphone Unmuted"
+	else
+		/usr/bin/notify-send -u low -h string:x-dunst-stack-tag:mic "Microphone Muted"
+
+	fi
+	;;
+
 	"g")
-		stat=$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -d" " -f2)
-		case $stat in
-			"oui")
-				echo X
-				;;
-			*)
-				echo Up
-				;;
-		esac
-		;;
+	stat=$(/usr/bin/pactl get-source-mute @DEFAULT_SOURCE@ | cut -d" " -f2)
+	case $stat in
+		"oui")
+			echo X
+			;;
+		*)
+			echo Up
+			;;
+	esac
+	;;
 esac

@@ -1,25 +1,35 @@
 #!/bin/sh
 
-vol=$(pactl get-sink-volume @DEFAULT_SINK@ | head -1 | cut -d"/" -f2 | tr -d " %")
-mute=$(pactl get-sink-mute @DEFAULT_SINK@ | cut -d" " -f2)
+add=1
+vol=$(/usr/bin/pactl get-sink-volume @DEFAULT_SINK@ | head -1 | cut -d"/" -f2 | tr -d " %")
+mute=$(/usr/bin/pactl get-sink-mute @DEFAULT_SINK@ | cut -d" " -f2)
 
 case $1 in
-"+")
+	"+")
 	if [ $vol -lt 100 ]; then
-		pactl set-sink-volume @DEFAULT_SINK@ +5%
+		new=$(($vol+$add))
 	fi
 	;;
-"-")
+	
+	"-")
 	if [ $vol -gt 0 ]; then
-		pactl set-sink-volume @DEFAULT_SINK@ -5%
+		new=$(($vol-$add))
 	fi
 	;;
-"m")
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	
+	"m")
+	/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
+	if [[ $mute == "oui" ]]; then
+		/usr/bin/notify-send -u low -h string:x-dunst-stack-tag:volume -h int:value:$vol "Unmuted Volume $vol%"
+	else
+		/usr/bin/notify-send -u low -h string:x-dunst-stack-tag:volume -h int:value:$vol "Muted Volume $vol%"
+	
+	fi
 	;;
-"g")
-	sink=$(pactl get-default-sink)
-	if [ $mute == "oui" ]; then
+	
+	"g")
+	sink=$(/usr/bin/pactl get-default-sink)
+	if [[ $mute == "oui" ]]; then
 		echo "X"
 	else
 		case $sink in
@@ -32,4 +42,9 @@ case $1 in
 		esac
 	fi
 	;;
-esac	
+esac
+
+if [[ ($1 == "+" || $1 == "-") && $mute != "oui" ]]; then
+	/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ $new%
+	/usr/bin/notify-send -u low -h string:x-dunst-stack-tag:volume -h int:value:$new "Unmuted Volume $new%"
+fi
