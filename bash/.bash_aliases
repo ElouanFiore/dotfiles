@@ -37,6 +37,6 @@ alias cpwd="pwd | tr -d '\n' | xclip -sel c"
 alias reconf="~/.dotfiles/config.sh"
 alias ssh="kitty +kitten ssh"
 alias public-ip="curl ifconfig.me; echo"
-vpn-home() { sudo wg-quick $1 home; }
 alias vim="nvim"
+alias vi="nvim"
 alias del="trash-put"

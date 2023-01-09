@@ -10,8 +10,9 @@ local vi_mode_colors = {
 }
 
 local theme = {
-	bg_name = "#0066cc",
 	bg_mode = "#1F1F23",
+	bg_name = "#0066cc",
+	bg_git = "#0066cc",
 }
 
 local vim_mode = {
@@ -29,13 +30,26 @@ local vim_mode = {
 		}
 	end,
 	icon = "",
-	left_sep = { str = " ", hl = { bg = "bg_mode", }, },
+	left_sep = {
+			str = " ",
+			hl = {
+				bg = "bg_mode",
+			},
+	},
 	right_sep = {
-		hl = {
-			bg = "bg_mode",
-			fg = "bg_name",
+		{
+			str = " ",
+			hl = {
+				bg = "bg_mode",
+			},
 		},
-		str = "slant_left",
+		{
+			str = "slant_left",
+			hl = {
+				bg = "bg_mode",
+				fg = "bg_name",
+			},
+		},
 	},
 }
 
@@ -44,12 +58,26 @@ local file_info = {
 	hl = {
 		bg = "bg_name",
 	},
-	right_sep = {
+	left_sep = {
+		str = " ",
 		hl = {
-			bg = "bg_mode",
-			fg = "bg_name",
+			bg = "bg_name",
 		},
-		str = "slant_right",
+	},
+	right_sep = {
+		{
+			str = " ",
+			hl = {
+				bg = "bg_name",
+			},
+		},
+		{
+			str = "slant_right",
+			hl = {
+				bg = "bg_mode",
+				fg = "bg_name",
+			},
+		},
 	},
 }
 
@@ -65,16 +93,30 @@ local line_percentage = {
 local git_branch = {
 	provider = "git_branch",
 	hl = {
-		fg = "white",
+		bg = "bg_git",
 	},
-	right_sep = " ",
-	left_sep = " ",
+	left_sep = {
+		{
+			str = "slant_left_2",
+			hl = {
+				bg = "bg_mode",
+				fg = "bg_git",
+			},
+		},
+		{
+			str = " ",
+			hl = {
+				bg = "bg_git",
+			},
+		},
+	},
 }
 
 local git_diff_added = {
 	provider = "git_diff_added",
 	hl = {
 		fg = "green",
+		bg = "bg_git",
 	},
 }
 
@@ -82,6 +124,7 @@ local git_diff_changed = {
 	provider = "git_diff_changed",
 	hl = {
 		fg = "orange",
+		bg = "bg_git",
 	},
 }
 
@@ -89,6 +132,7 @@ local git_diff_removed = {
 	provider = "git_diff_removed",
 	hl = {
 		fg = "red",
+		bg = "bg_git",
 	},
 }
 
@@ -97,13 +141,34 @@ local position = {
 	hl = {
 		style = "bold",
 	},
+	left_sep = {
+		{
+			str = " ",
+			hl = {
+				bg = "bg_git",
+			},
+		},
+		{
+			str = "slant_right_2",
+			hl = {
+				bg = "bg_mode",
+				fg = "bg_git",
+			},
+		},
+		{
+			str = " ",
+			hl = {
+				bg = "bg_mode",
+			},
+		},
+	},
 }
 
 local components = {
 	active = {
 		{vim_mode, file_info}, -- left
 		{}, -- middle
-		{git_diff_added, git_diff_changed, git_diff_removed, git_branch, position, line_percentage}, -- right
+		{git_branch, git_diff_added, git_diff_changed, git_diff_removed, position, line_percentage}, -- right
 	},
 	inactive = {
 		{file_info}, -- left

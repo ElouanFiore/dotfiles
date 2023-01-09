@@ -2,6 +2,8 @@ set encoding=utf-8
 language en_US.utf8
 set clipboard=unnamedplus
 set noshowmode
+set scrolloff=3
+set cursorline
 
 " Line Number conf
 set number
