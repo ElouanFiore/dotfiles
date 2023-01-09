@@ -108,24 +108,16 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 
 # debug mode
-mode "debug" {
-	bindsym c exec --no-startup-id i3-msg reload && $Bar --refresh
-	bindsym r exec --no-startup-id i3-msg restart && $Bar --refresh
+bindsym $mod+Shift+c exec --no-startup-id /usr/bin/i3-msg reload
+bindsym $mod+Shift+r exec --no-startup-id /usr/bin/i3-msg restart
 	
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Shift+d mode "default"
-}
-
-bindsym $mod+Shift+d mode "debug"
-
 # mode for logout/locking/sleeping/shutdown/restart
 mode "power" {
-	bindsym l exec --no-startup-id /bin/i3lock -i ~/pics/Wallpapers/altered-carbon.png; mode "default"
-	bindsym e exec --no-startup-id i3-msg exit
-	bindsym s exec --no-startup-id "/bin/i3lock -i ~/pics/Wallpapers/altered-carbon.png; /bin/systemctl suspend"; mode "default"
-	bindsym p exec --no-startup-id /bin/systemctl poweroff
-	bindsym r exec --no-startup-id /bin/systemctl reboot
+	bindsym l mode "default"; exec --no-startup-id /bin/loginctl lock-session
+	bindsym s mode "default"; exec --no-startup-id /bin/systemctl suspend
+	bindsym e exec --no-startup-id /usr/bin/i3-msg exit
+	bindsym p exec --no-startup-id /usr/bin/systemctl poweroff
+	bindsym r exec --no-startup-id /usr/bin/systemctl reboot
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
