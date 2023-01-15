@@ -22,3 +22,5 @@
 .config/user-dirs.dirs			xdg/user-dirs.dirs
 # Dunst
 .config/dunst/dunstrc			dunst/dunstrc
+# Network_dmenu
+.config/networkmanager-dmenu/config.ini	network_dmenu/config.ini
