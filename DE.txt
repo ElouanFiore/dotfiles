@@ -22,3 +22,5 @@ wmctrl
 xclip
 xdg-user-dirs
 xss-lock
+xorg-server
+xorg-xinit

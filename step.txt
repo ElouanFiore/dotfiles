@@ -1,0 +1,4 @@
+Install DE
+localectl fr pc105 latin9
+Run config
+
