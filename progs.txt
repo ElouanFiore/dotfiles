@@ -8,3 +8,5 @@ yubikey-personalization-gui
 thunar
 discord
 minecraft-launcher
+wireshark
+vlc

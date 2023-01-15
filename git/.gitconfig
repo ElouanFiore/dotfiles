@@ -7,6 +7,6 @@
 	look = log --graph
 	st = status
 [core]
-	editor = vim
+	editor = nvim
 [merge]
-	tool = vimdiff
+	tool = nvimdiff
