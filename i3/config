@@ -36,7 +36,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.dotfiles/bin/lum --dec
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id xterm
 
 # kill focused window
 bindsym $mod+q kill
