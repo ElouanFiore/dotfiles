@@ -1,7 +1,6 @@
 # Bash
 .bashrc			bash/.bashrc
 .bash_logout		bash/.bash_logout
-.bash_aliases		bash/.bash_aliases
 .bash_profile		bash/.bash_profile
 # X11
 .xinitrc		X11/.xinitrc

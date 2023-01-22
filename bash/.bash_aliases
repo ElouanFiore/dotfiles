@@ -1,5 +1,5 @@
 # Color aliases
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -35,7 +35,6 @@ alias lla="ls -lahF"
 alias dotfiles="git -C ~/.dotfiles"
 alias cpwd="pwd | tr -d '\n' | xclip -sel c"
 alias reconf="~/.dotfiles/config.sh"
-alias ssh="kitty +kitten ssh"
 alias public-ip="curl ifconfig.me; echo"
 alias vim="nvim"
 alias vi="nvim"
