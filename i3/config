@@ -1,6 +1,15 @@
 set $mod Mod4
 
-client.focused	#f0c674 #285577 #ffffff #2e9ef4	#f0c674
+set_from_resource $background i3.colors.background #282A2E
+set_from_resource $foreground i3.colors.foreground #C5C8C6
+set_from_resource $unfocus i3.colors.unfocus #707880
+set_from_resource $focus i3.colors.focus #F0C6F4
+set_from_resource $urgent i3.colors.urgent #A54242
+set_from_resource $indicator i3.colors.indicator #A54242
+
+client.focused		$focus $background $foreground $indicator $focus
+client.unfocused	$unfocus $background $foreground $indicator $unfocus
+client.urgent		$urgent $background $foreground $indicator $urgent
 
 # Borders & Gaps conf
 hide_edge_borders smart

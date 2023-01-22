@@ -1,0 +1,21 @@
+! Polybar
+polybar.colors.background:	#282A2E
+polybar.colors.foreground:	#C5C8C6
+polybar.colors.separator:	#707880
+!polybar.colors.primary:		#FF0000
+polybar.colors.primary:		#F0C674
+polybar.colors.focused:		#373B41
+polybar.colors.urgent:		#A54242
+
+! I3
+i3.colors.background:	#282A2E
+i3.colors.foreground:	#C5C8C6
+i3.colors.unfocus:	#707880
+i3.colors.focus:	#F0C674
+i3.colors.urgent:	#A54242
+i3.colors.indicator:	#A54242
+
+! Bash
+bash.colors.user: 38;5;202
+bash.colors.host: 38;5;208
+bash.colors.path: 38;5;220

@@ -14,24 +14,29 @@ shopt -s checkwinsize
 set -o vi
 
 # Alias definitions
-. ~/.bash_aliases
+. ~/.dotfiles/bash/.bash_aliases
 
 # Make less prettier
 if [ -x /usr/bin/lesspipe ]; then
-	eval $(lesspipe)
+	eval $(/usr/bin/lesspipe)
 fi
 
 # Color codes
 reset="\[\e[0m\]"
-usr="\[\e[38;5;202m\]"
-hst="\[\e[38;5;208m\]"
-pth="\[\e[38;5;220m\]"
+
+if [[ -n $COLOR_SCHEME ]]; then
+	user="\[\e[$(/usr/bin/xrdb -get bash.colors.user)m\]"
+	host="\[\e[$(/usr/bin/xrdb -get bash.colors.host)m\]"
+	path="\[\e[$(/usr/bin/xrdb -get bash.colors.path)m\]"
+else
+	user="\[\e[38;5;202m\]"
+	host="\[\e[38;5;208m\]"
+	path="\[\e[38;5;220m\]"
+fi
 
 # The prompt
-PS1="[$usr\u$reset@$hst\h$reset] $pth\w$reset\n\$ "
+PS1="[$user\u$reset@$host\h$reset] $path\w$reset\n\$ "
 PS2="> "
-
-unset reset, usr, hst, pth
 
 PATH=~/.local/bin:$PATH
 
