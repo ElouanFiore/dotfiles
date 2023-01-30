@@ -1,0 +1,25 @@
+XTerm*utf8:		1
+XTerm.termName:		xterm-256color
+XTerm*reverseVideo:	true
+XTerm*borderWidth:	0
+
+XTerm*renderFont:	true
+XTerm*faceName:		FiraCode Nerd Font Mono
+XTerm*faceSize:		14
+
+XTerm*faceSize1: 8
+XTerm*faceSize2: 10
+XTerm*faceSize3: 14
+XTerm*faceSize4: 16
+XTerm*faceSize5: 22
+
+XTerm*saveLines:	4096
+XTerm*scrollTtyOutput:	false
+XTerm*ScrollKey: 	true
+
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+XTerm*translations: #override \
+	Shift <Btn1Up>:		exec-formatted("xdg-open '%t'", PRIMARY) \n\
+	Ctrl Shift <Key>V:	insert-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>C:	copy-selection(CLIPBOARD) \n

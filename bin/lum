@@ -21,7 +21,7 @@ case $1 in
 	;;
 esac
 
-if [[ $1 != "--set" ]]; then
+if [[ $1 == "--inc" || $1 == "--dec" ]]; then
 	/usr/bin/xbacklight -set $new
 	/usr/bin/notify-send -u low -h string:x-dunst-stack-tag:backlight -h int:value:$new "Brightness $new%"
 fi
