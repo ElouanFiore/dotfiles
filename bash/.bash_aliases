@@ -40,3 +40,5 @@ alias public-ip="curl ifconfig.me; echo"
 alias vim="nvim"
 alias vi="nvim"
 alias del="trash-put"
+alias unlock-bw='export BW_SESSION=$(/usr/bin/bw unlock --raw)'
+alias unlock-ssh='[[ -z $BW_SESSION ]] && unlock-bw; DISPLAY=1 SSH_ASKPASS=~/.dotfiles/bin/get-sshpass ssh-add < /dev/null'

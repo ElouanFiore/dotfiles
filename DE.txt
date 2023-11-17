@@ -1,6 +1,7 @@
 acpilight
 bat
 bitwarden
+bitwarden-cli-bin
 dmenu
 dunst
 feh
