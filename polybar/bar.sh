@@ -20,7 +20,7 @@ function switch() {
 	/usr/bin/echo $mode > /tmp/dbar
 	/usr/bin/polybar-msg cmd quit
 	echo $mode
-	exec /usr/bin/polybar $mode
+	exec /usr/bin/polybar -c ~/.dotfiles/polybar/config.ini $mode
 
 }
 
@@ -40,14 +40,14 @@ function menu() {
 
 	elif [[ -n $action ]]; then
 		/usr/bin/polybar-msg cmd quit
-		exec /usr/bin/polybar $action
+		exec /usr/bin/polybar -c ~/.dotfiles/polybar/config.ini $action
 	fi
 }
 
 case "$1" in
 	--start)
 	echo "multi" > /tmp/dbar
-	exec /usr/bin/polybar multi
+	exec /usr/bin/polybar -c ~/.dotfiles/polybar/config.ini multi
 	;;
 
 	--switch)

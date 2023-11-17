@@ -13,13 +13,7 @@
 .config/nvim/init.vim			nvim/init.vim
 .config/nvim/lua/feline-conf.lua	nvim/feline-conf.lua
 .config/nvim/lua/conf.lua		nvim/conf.lua
-# Polybar
-.config/polybar/config.ini		polybar/config.ini
-# Kitty
-.config/kitty/kitty.conf		kitty/kitty.conf
 # XDG
 .config/user-dirs.dirs			xdg/user-dirs.dirs
-# Dunst
-.config/dunst/dunstrc			dunst/dunstrc
 # Network_dmenu
 .config/networkmanager-dmenu/config.ini	network_dmenu/config.ini
