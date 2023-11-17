@@ -3,9 +3,11 @@
 #
 
 export DOCKER_BUILDKIT=1
+eval $(ssh-agent)
 
-if [ -z "$DISPLAY" ] && [ "$XDG_SESSION_TYPE$XDG_VTNR" = "tty1" ]; then
-	exec startx &> /dev/null
+if [[ $(/sbin/tty) == "/dev/tty2" ]]; then
+	export COLOR_SCHEME=orange
+	/usr/bin/xrdb -merge ~/.dotfiles/X11/Xressources.$COLOR_SCHEME
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
