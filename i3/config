@@ -1,7 +1,7 @@
 # imported from xinitrc
 exec --no-startup-id "/usr/bin/picom --fade-delta 3 -b"
-exec --no-startup-id "/usr/bin/feh --bg-scale ~/pics/Wallpapers/$COLOR_SCHEME.png"
-exec --no-startup-id "/usr/bin/xss-lock -- /bin/i3lock -n -i ~/pics/Wallpapers/altered-carbon.png"
+exec --no-startup-id "/usr/bin/feh --no-fehbg --bg-scale ~/.dotfiles/img/wallpaper"
+exec --no-startup-id "/usr/bin/xss-lock -- /bin/i3lock -n -i ~/.dotfiles/img/lockscreen"
 exec --no-startup-id "/usr/bin/dunst -conf ~/.dotfiles/dunst/dunstrc"
 
 set $mod Mod4
