@@ -4,6 +4,7 @@ set clipboard=unnamedplus
 set noshowmode
 set scrolloff=3
 set cursorline
+let mapleader=","
 
 " Line Number conf
 set number
@@ -37,9 +38,12 @@ set t_ut=
 colorscheme nightfly
 
 " File tree conf
-nnoremap <C-f> :NvimTreeToggle<CR>
+map <leader>f :NvimTreeToggle<CR>
 
-" Tre-Sitter conf
+" clear search
+map <leader>c :noh<CR>
+
+" Tree-Sitter conf
 autocmd VimEnter * TSEnable indent
 autocmd VimEnter * TSEnable highlight
 
