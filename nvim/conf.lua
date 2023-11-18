@@ -1,19 +1,16 @@
--- File tree conf
-require("nvim-tree").setup({
-	view = {
-		mappings = { 
-			list = {
-				{ key = "<C-t>", action = "" },
-			}
-		}
+-- -- File tree conf
+require("nvim-tree").setup()
+
+-- Status bar conf
+require('lualine').setup({
+	options = {
+		theme = 'onedark',
+		disabled_filetypes = {'NvimTree', 'vundle'},
 	}
 })
 
--- Status bar conf
-require("feline-conf")
-
 -- Indent marker setup
-require("indent_blankline").setup()
+require("ibl").setup()
 
 -- Comment Plugin
 require('Comment').setup()

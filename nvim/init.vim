@@ -17,14 +17,16 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bluz71/vim-nightfly-guicolors'
-Plugin 'kyazdani42/nvim-web-devicons'
-Plugin 'feline-nvim/feline.nvim'
 Plugin 'nvim-tree/nvim-tree.lua'
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plugin 'nvim-treesitter/nvim-treesitter-context'
 Plugin 'lukas-reineke/indent-blankline.nvim'
 Plugin 'numToStr/Comment.nvim'
 Plugin 'lewis6991/gitsigns.nvim'
+
+Plugin 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plugin 'nvim-tree/nvim-web-devicons'
 
 call vundle#end()
 
@@ -35,7 +37,7 @@ set t_ut=
 colorscheme nightfly
 
 " File tree conf
-nnoremap <C-t> :NvimTreeToggle<CR>
+nnoremap <C-f> :NvimTreeToggle<CR>
 
 " Tre-Sitter conf
 autocmd VimEnter * TSEnable indent

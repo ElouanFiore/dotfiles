@@ -11,7 +11,6 @@
 .config/i3/config	i3/config
 # Nvim
 .config/nvim/init.vim			nvim/init.vim
-.config/nvim/lua/feline-conf.lua	nvim/feline-conf.lua
 .config/nvim/lua/conf.lua		nvim/conf.lua
 # XDG
 .config/user-dirs.dirs			xdg/user-dirs.dirs
