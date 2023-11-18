@@ -19,7 +19,7 @@ client.urgent		$urgent $background $foreground $indicator $urgent
 
 # Borders & Gaps conf
 hide_edge_borders smart
-smart_gaps on
+smart_gaps off
 gaps inner 10
 default_border pixel 2
 
