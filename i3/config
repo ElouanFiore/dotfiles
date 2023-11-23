@@ -23,10 +23,8 @@ smart_gaps off
 gaps inner 10
 default_border pixel 2
 
-# Start keepass and assign to 9
+# Assign Bitwarden to 9
 assign [class="Bitwarden"] 9
-exec --no-startup-id /usr/bin/bitwarden-desktop
-exec --no-startup-id "/usr/bin/sleep 1 && /usr/bin/wmctrl -r Bitwarden -b remove,demands_attention&"
 
 font pango:FiraCode Nerd Font 12
 
