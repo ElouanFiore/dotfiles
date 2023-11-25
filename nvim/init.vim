@@ -43,6 +43,12 @@ map <leader>f :NvimTreeToggle<CR>
 " clear search
 map <leader>c :noh<CR>
 
+" Buffer navigation
+map <leader>n :bnext<CR>
+map <leader>p :bprev<CR>
+
+map <leader>w <C-w>w
+
 " Tree-Sitter conf
 autocmd VimEnter * TSEnable indent
 autocmd VimEnter * TSEnable highlight
