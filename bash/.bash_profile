@@ -8,7 +8,6 @@ eval $(ssh-agent)
 if [[ $(/sbin/tty) == "/dev/tty2" ]]; then
 	export COLOR_SCHEME=orange
 	/usr/bin/xrdb -merge ~/.dotfiles/X11/Xressources.$COLOR_SCHEME
-	[[ -f ~/.dotfiles/.env ]] && . ~/.dotfiles/.env
 fi
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
